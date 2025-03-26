@@ -23,23 +23,23 @@ app.UseAuthorization();
 app.MapControllers();
 
 //It will still start the service and keep on connecting to the database
-app.Lifetime.ApplicationStarted.Register(async () => {
-  try
-  {
-    await DbInitializer.InitDb(app);
-  }
-  catch (System.Exception e)
-  {
-    Console.WriteLine(e);
-  }
+app.Lifetime.ApplicationStarted.Register(async () =>
+{
+    try
+    {
+        await DbInitializer.InitDb(app);
+    }
+    catch (System.Exception e)
+    {
+        Console.WriteLine(e);
+    }
 });
-
 
 app.Run();
 
 //Making the Service Http Resilence using Polling, it will try to connect to other service until it is not
-static IAsyncPolicy<HttpResponseMessage> GetPolicy()
-        => HttpPolicyExtensions
-          .HandleTransientHttpError()
-          .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
-          .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
+static IAsyncPolicy<HttpResponseMessage> GetPolicy() =>
+    HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
+        .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
