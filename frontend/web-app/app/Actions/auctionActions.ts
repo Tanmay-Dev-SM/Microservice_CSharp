@@ -1,8 +1,13 @@
 "use server";
 
 import { auth } from "@/auth";
+<<<<<<< Updated upstream
 import { fetchWrapper } from "@/lib/fetchWrapper";
 import { PagedResult, Auction } from "@/types";
+=======
+import { fetchWrapper } from "@/app/lib/fetchWrapper";
+import { PagedResult, Auction, Bid } from "@/types";
+>>>>>>> Stashed changes
 import { revalidatePath } from "next/cache";
 import { FieldValues } from "react-hook-form";
 

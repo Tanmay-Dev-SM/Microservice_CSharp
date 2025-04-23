@@ -13,12 +13,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+<<<<<<< Updated upstream
+=======
+  const user = await getCurrentUser();
+  const notifyUrl = process.env.NOTIFY_URL;
+>>>>>>> Stashed changes
   return (
     <html lang="en">
       <body>
         <ToasterProvider />
         <Navbar />
+<<<<<<< Updated upstream
         <main className="container mx-auto px-5 pt-10">{children}</main>
+=======
+        <main className="container mx-auto px-5 pt-10">
+          <SignalRProvider user={user} notifyUrl={notifyUrl!}>
+            {children}
+          </SignalRProvider>
+        </main>
+>>>>>>> Stashed changes
       </body>
     </html>
   );
