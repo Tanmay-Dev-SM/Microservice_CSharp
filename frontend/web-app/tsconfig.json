@@ -17,6 +17,8 @@
         "name": "next"
       }
     ],
+    // 👇 this is important
+    "types": ["next-auth"],
     "paths": {
       "@/*": ["./*"]
     }
