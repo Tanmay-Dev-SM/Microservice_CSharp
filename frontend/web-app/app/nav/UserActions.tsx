@@ -7,7 +7,8 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
-import { AiFillCar, AiFillTrophy, AiOutlineLogout } from "react-icons/ai";
+import { AiFillTrophy, AiOutlineLogout } from "react-icons/ai";
+import { MdSell } from "react-icons/md";
 import { HiCog, HiUser } from "react-icons/hi2";
 
 type Props = {
@@ -37,7 +38,7 @@ export default function UserActions({ user }: Props) {
       <DropdownItem icon={AiFillTrophy} onClick={setWinner}>
         Auctions won
       </DropdownItem>
-      <DropdownItem icon={AiFillCar}>
+      <DropdownItem icon={MdSell}>
         <Link href="/auctions/create">Sell my item</Link>
       </DropdownItem>
       <DropdownItem icon={HiCog}>

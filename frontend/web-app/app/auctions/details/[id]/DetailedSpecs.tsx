@@ -36,7 +36,7 @@ export default function DetailedSpecs({ auction }: Props) {
         </Table.Row>
         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
           <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-            Mileage
+            Mileage/Manufactured-Year
           </Table.Cell>
           <Table.Cell>{auction.mileage}</Table.Cell>
         </Table.Row>

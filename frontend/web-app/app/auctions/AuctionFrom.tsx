@@ -84,11 +84,11 @@ export default function AuctionFrom({ auction }: Props) {
           rules={{ required: "Year is required" }}
         />
         <Input
-          label="Mileage for car"
+          label="Mileage for car/ Product Manufacture Year"
           name="mileage"
           type="number"
           control={control}
-          rules={{ required: "Mileage is required if item is car" }}
+          rules={{ required: "Mileage is required if item is car or Product Manufacture Year" }}
         />
       </div>
 
