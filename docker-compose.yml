@@ -72,6 +72,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
+      - IssuerUri=http://localhost:5000
+      - ClientApp=http://localhost:3000
       - ConnectionStrings__DefaultConnection=Server=postgres:5432;User Id=postgres;Password=postgresspw;Database=identity
     ports:
       - 5000:80
@@ -120,6 +122,24 @@ services:
       - 7004:80
     depends_on:
       - rabbitmq
+
+  web-app:
+    image: tansak2073/web-app
+    build:
+      context: ./frontend/web-app
+      dockerfile: Dockerfile
+    volumes:
+      - /var/lib/web/data
+    ports:
+      - 3000:3000
+    environment:
+      - AUTH_SECRET="LNjU+zuhf9gD3+6D6yiH4onlPuk3cBKAoq5mdZpz+nY="
+      - AUTH_URL=http://localhost:3000
+      - AUTH_URL_INTERNAL=http://web-app:3000
+      - API_URL=http://gateway-svc/
+      - ID_URL=http://localhost:5000
+      - ID_URL_INTERNAL=http://identity-svc
+      - NOTIFY_URL=http://localhost:6001/notifications
 
 volumes:
   pgdata:
