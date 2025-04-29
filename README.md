@@ -4,21 +4,21 @@ This project is a full-stack microservices-based auction platform with live bidd
 🚀 Getting Started
 Follow these steps to run the project locally:
 
-Start the services
+1. Start the Services
 Run the following command to bring up all backend services and the frontend:
 
 bash
 Copy
 Edit
 docker-compose up -d
-Access the frontend
-Open your browser and go to:
+2. Access the Frontend
+Open your browser and navigate to:
 
 arduino
 Copy
 Edit
 http://localhost:3000
-Sign In to the App
+3. Sign In to the App
 You can sign in with a test user or create a new one.
 
 Prebuilt Test Users:
@@ -27,13 +27,12 @@ Prebuilt Test Users:
 Username	Password
 alice	Pass123$
 bob	Pass123$
-Live Bidding
-
+🎯 Live Bidding
 After logging in, participate in live auctions.
 
-You can switch users (e.g., Alice and Bob) to see live updates happening in real-time.
+Switch users (e.g., Alice and Bob) to see real-time live bid updates.
 
-If you are not signed in, you can still view live bid updates as a guest.
+Even if not signed in, you can view live bid updates as a guest.
 
 📦 Tech Stack
 Frontend: Next.js / TypeScript
@@ -48,9 +47,14 @@ Database: PostgreSQL, MongoDB
 
 Containerization: Docker & Docker Compose
 
-Real-time Updates: SignalR/WebSocket based
+Real-time Updates: SignalR / WebSocket-based
 
 🛠️ Notes
-Make sure Docker is installed and running before executing docker-compose up -d.
+Make sure Docker is installed and running before executing:
 
-Environment variables like API URLs and authentication secrets are handled internally inside docker-compose.yml.
+bash
+Copy
+Edit
+docker-compose up -d
+Environment variables like API URLs and authentication secrets are managed internally inside the docker-compose.yml file.
+
