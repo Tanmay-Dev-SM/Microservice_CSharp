@@ -6,6 +6,8 @@ This project is a full-stack microservices-based auction platform with live bidd
 
 ## 🚀 Getting Started
 
+!Note: This project is not deployed 24/7 because running it continuously on cloud services would incur costs. It is intended as a practice project. However, anyone who wishes to deploy it can do so easily since all configuration and package management are handled through Docker Compose. Kubernetes can also be used for deployment if preferred.
+
 Follow these steps to run the project locally:
 
 ### 1. Start the Services
