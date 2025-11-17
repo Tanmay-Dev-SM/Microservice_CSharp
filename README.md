@@ -68,3 +68,9 @@ You can sign in with a test user or create a new one.
 - Environment variables like API URLs and authentication secrets are managed internally inside the `docker-compose.yml` file.
 
 ---
+
+## HLD System
+
+<img width="3208" height="1840" alt="SystemDesigne-5" src="https://github.com/user-attachments/assets/f2bfaef6-7ac0-4549-8ded-29a5b0c0bb9b" />
+
+---
